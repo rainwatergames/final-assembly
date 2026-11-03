@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- Final Assembly v0.3.0 (ALPHA) — A Rainwater Games production. © 2026 Rainwater Games (Jeff Rainwater). All rights reserved. -->
+<!-- Final Assembly v0.3.1 (ALPHA) — A Rainwater Games production. © 2026 Rainwater Games (Jeff Rainwater). All rights reserved. -->
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="author" content="Rainwater Games - Jeff Rainwater">
@@ -110,8 +110,8 @@ button{font:inherit;cursor:pointer;color:inherit}
 .stars{text-align:center;font-size:40px;color:#f2b02a}.bigt{text-align:center;font:22px Lil,Impact,sans-serif;margin:4px}
 .tag{font:900 9px system-ui;background:#7a4bd1;color:#fff;border-radius:5px;padding:2px 5px;vertical-align:middle;letter-spacing:.06em}
 .safety{background:repeating-linear-gradient(135deg,#ffd45c 0 14px,#ffcb3a 14px 28px);border-radius:10px;padding:8px 10px;font-size:13px;border-left:6px solid #2b1d12}
-.huddle{position:relative;height:150px;margin:8px 0}.boss{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:46px}
-.bub{position:absolute;background:#fff;border-radius:12px;padding:4px 9px;font-weight:800;font-size:12px;white-space:nowrap;box-shadow:0 2px 6px #0003;animation:bp .4s both}@keyframes bp{from{transform:scale(0);opacity:0}}
+.huddle{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);grid-auto-rows:auto;gap:8px;align-items:center;margin:8px 0}.boss{grid-column:2;grid-row:1/span 2;font-size:46px;line-height:1;align-self:center}
+.bub{position:relative;min-width:0;background:#fff;border-radius:12px;padding:4px 9px;font-weight:800;font-size:12px;line-height:1.25;white-space:normal;overflow-wrap:anywhere;text-align:center;box-shadow:0 2px 6px #0003;animation:bp .4s both}.bub:nth-child(even){grid-column:1}.bub:nth-child(odd){grid-column:3}.bub:nth-child(2),.bub:nth-child(3){grid-row:1}.bub:nth-child(4),.bub:nth-child(5){grid-row:2}.bub:nth-child(n+6){grid-column:1/-1}@keyframes bp{from{transform:scale(0);opacity:0}}
 .tw{font-weight:900;margin:6px 0}.twists{display:grid;grid-template-columns:1fr 1fr;gap:8px}.twb{border:0;border-radius:12px;padding:10px 6px;background:#fff;box-shadow:0 3px 0 #b8956a;display:flex;flex-direction:column;align-items:center;gap:2px}.twb span{font-size:24px}.twb small{font-size:11px;color:#6a5040}
 .lnk{display:block;margin:10px auto 0;border:0;background:none;text-decoration:underline;color:#7a5a3a;font-weight:700}
 .exp{background:#efe6ff;border:2px solid #7a4bd1;border-radius:12px;padding:10px;margin-bottom:10px}.exph{font-weight:900;font-size:15px}.exp p{margin:6px 0;font-size:13px}
@@ -129,6 +129,6 @@ button{font:inherit;cursor:pointer;color:inherit}
 .tray .die{touch-action:none}
 </style></head><body>
 <div id="app"></div>
-<script src="install.js?v=0.3.0" data-name="Final Assembly" data-gate="__FA.screen=title"></script>
-<script src="game.js?v=0.3.0"></script>
+<script src="install.js?v=0.3.1" data-name="Final Assembly" data-gate="__FA.screen=title"></script>
+<script src="game.js?v=0.3.1"></script>
 </body></html>

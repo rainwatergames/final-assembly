@@ -1,6 +1,6 @@
-/*! Final Assembly v0.3.0 ALPHA — © 2026 Rainwater Games (Jeff Rainwater). All rights reserved. */
+/*! Final Assembly v0.3.1 ALPHA — © 2026 Rainwater Games (Jeff Rainwater). All rights reserved. */
 (function(){'use strict';
-const VERSION='0.3.0',SAVE='fa-save-v3';
+const VERSION='0.3.1',SAVE='fa-save-v3';
 const Q=new URLSearchParams(location.search),TEST=Q.get('test')||'';
 let S=null;
 function rnd(){let t=(S.rng=(S.rng+0x6D2B79F5)>>>0);t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return((t^t>>>14)>>>0)/4294967296;}
@@ -298,10 +298,9 @@ function animRoll(ids,cb){if(UI.noSave){cb&&cb();return;}UI.busy=0;render();
 function doRoll(){if(S.phase!=='roll')return;snap();roll();save();animRoll(S.dice.map(d=>d.id),()=>{if(UI.coach===0){UI.coach=1;render();}});}
 // ---------- overlays ----------
 function standup(){const ov=document.createElement('div');ov.className='ov';ov.id='standup';
- const pos=[[2,4],[52,10],[0,64],[40,84]];
  ov.innerHTML='<div class="box su"><h2>☕ Monday Stand-up <span class="tag">EXPANSION</span></h2>'+
  '<div class="safety">⛑️ <b>"Safety moment!"</b> '+S.tip+'</div>'+
- '<div class="huddle"><div class="boss">👔</div>'+S.bubs.map((b,i)=>'<div class="bub" style="left:'+pos[i][0]+'%;top:'+pos[i][1]+'%;animation-delay:'+(.3+i*.35)+'s">'+b+'</div>').join('')+'</div>'+
+ '<div class="huddle"><div class="boss">👔</div>'+S.bubs.map((b,i)=>'<div class="bub" style="animation-delay:'+(.3+i*.35)+'s">'+b+'</div>').join('')+'</div>'+
  '<p class="tw">Team focus this week — pick one:</p><div class="twists">'+S.twists.map(k=>{const t=TWISTS.find(x=>x.k===k);return'<button class="twb" data-tw="'+k+'"><span>'+t.i+'</span><b>'+t.n+'</b><small>'+t.d+'</small></button>';}).join('')+'</div>'+
  '<button class="lnk" data-tw="">Skip stand-up</button></div>';
  document.body.appendChild(ov);sfx('meet');

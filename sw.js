@@ -1,6 +1,6 @@
 /*! Final Assembly — © 2026 Rainwater Games (Jeff Rainwater). All rights reserved. */
 // Always-newest: network-first with no-cache; cache is offline fallback only.
-const V='0.3.0';const C='final-assembly-v'+V;
+const V='0.3.1';const C='final-assembly-v'+V;
 const F=['./','index.html','game.js?v='+V,'install.js?v='+V,'manifest.webmanifest','icon-192.png','icon-512.png','fonts/LilitaOne-Regular.ttf'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(C).then(c=>c.addAll(F.map(u=>new Request(u,{cache:'no-cache'})))).then(()=>self.skipWaiting()));});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==C).map(x=>caches.delete(x)))).then(()=>self.clients.claim()));});
